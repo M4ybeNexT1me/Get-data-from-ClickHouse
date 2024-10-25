@@ -28,12 +28,14 @@
 2. Pandas
 3. clickhouse_connect
 4. tqdm
+5. time
 
 для установки соответвующей библиотеки используйте команды:
 1. ```pip install Numpy``` или ```pip3 install Numpy```
 2. ```pip install Pandas``` или ```pip3 install Pandas```
 3. ```pip install clickhouse-connect``` или ```pip3 install clickhouse-connect```
 4. ```pip install tqdm``` или ```pip3 install tqdm```
+5. ```pip install time``` или ```pip3 install time```
 
 - при возникновении проблем - ищите ответы на "Stack Overflow"
 
@@ -53,10 +55,24 @@ with
 ```
 
 3. "ClickHouse_database_configuration.py" - хранит конфигурации для подключения к ClickHouse (один раз заполнили и не трогаем)
-4. "ClickHouse_database.py" - содержит класс с методами для подключения к ClickHouse и сопутствующими обработками (не открываем)
-5. "ClickHouse_get_data.py" - основной файл для выгрузки данных, в котором работаем 
-6. "fetch_data" - папка, в которую сохраняем выгруженные файлы
-7. "test.py" - сборка выгруженных файлов
+```
+__HOST__ = 'c-c9qsfmhkl42nof95hnh3.rw.mdb.yandexcloud.net'
+__PORT__ = 8443
+__CA_CERT__ = ''
+__USERNAME__ = ''
+__PASSWORD__ = ''
+```
+
+__CA_CERT__ - путь до файла дешифровщика RootCA.pem, который вы скачали с [Яндекса](https://yandex.cloud/ru/docs/managed-clickhouse/operations/connect/?utm_referrer=about%3Ablank);
+    
+__USERNAME__ - ваш LDAP;
+    
+__PASSWORD__ - пароль, который выдал руководитель (Дарья Голубева).
+    
+5. "ClickHouse_database.py" - содержит класс с методами для подключения к ClickHouse и сопутствующими обработками (не открываем)
+6. "ClickHouse_get_data.py" - основной файл для выгрузки данных, в котором работаем 
+7. "fetch_data" - папка, в которую сохраняем выгруженные файлы
+8. "test.py" - сборка выгруженных файлов
 
 <a name="try_run"><h2>Пробный запуск и проверка данных</h2></a>
 
